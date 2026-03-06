@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="site-lang-ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المكتبة - Athar Educational Club</title>
+    <script>
+    (function(){
+      try {
+        var lang = localStorage.getItem('athar-site-lang');
+        if (lang === 'en') {
+          document.documentElement.className = 'site-lang-en';
+          document.documentElement.setAttribute('dir', 'ltr');
+          document.documentElement.setAttribute('lang', 'en');
+        }
+      } catch (_) {}
+    })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo-light.png" alt="نادي اثر الثقافي - Athar Educational Club" class="logo-img logo-img-nav">
+                <div class="logo-text">
+                    <span class="lang-ar">نادي اثر الثقافي</span>
+                    <span class="lang-en">Athar Educational Club</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><span class="lang-ar">معلومات النادي</span><span class="lang-en">Club Info</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="initiatives.html" class="nav-link"><span class="lang-ar">المبادرات</span><span class="lang-en">Initiatives</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="library.html" class="nav-link active"><span class="lang-ar">المكتبة</span><span class="lang-en">Library</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="achievements.html" class="nav-link"><span class="lang-ar">الإنجازات</span><span class="lang-en">Achievements</span></a>
+                </li>
+            </ul>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn active" data-lang="ar" aria-label="العربية">عربي</button>
+                <span class="lang-divider">|</span>
+                <button type="button" class="lang-btn" data-lang="en" aria-label="English">English</button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="page-title">
+                    <span class="lang-ar">المكتبة</span>
+                    <span class="lang-en">Library</span>
+                </h1>
+                <p class="page-subtitle"><span class="lang-ar">مكتبتنا الرقمية والموارد التعليمية</span><span class="lang-en">Our digital library and educational resources</span></p>
+            </div>
+        </section>
+
+        <!-- Window Interface -->
+        <section class="library-section library-interface-section">
+            <div class="container">
+                <div class="content-box">
+                    <h2 class="section-title">
+                        <span class="lang-ar">واجهة النافذة</span>
+                        <span class="lang-en">Window Interface</span>
+                    </h2>
+                    <p class="library-interface-text">
+                        <span class="lang-ar">يُعرض الكتاب مع صورة غلافه في النافذة. يمكن للأعضاء اختيار الكتاب المطلوب عن طريق التمرير للأسفل.</span>
+                        <span class="lang-en">The book, along with its cover image, is displayed on the window. Users can select their desired book by scrolling down.</span>
+                    </p>
+                    <div class="library-window-preview" aria-hidden="true">
+                        <div class="book-covers-scroll">
+                            <div class="book-cover-placeholder"><span class="lang-ar">كتاب</span><span class="lang-en">Book</span></div>
+                            <div class="book-cover-placeholder"><span class="lang-ar">كتاب</span><span class="lang-en">Book</span></div>
+                            <div class="book-cover-placeholder"><span class="lang-ar">كتاب</span><span class="lang-en">Book</span></div>
+                            <div class="book-cover-placeholder"><span class="lang-ar">كتاب</span><span class="lang-en">Book</span></div>
+                            <div class="book-cover-placeholder"><span class="lang-ar">كتاب</span><span class="lang-en">Book</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book Borrowing Process -->
+        <section class="library-section borrowing-section">
+            <div class="container">
+                <div class="content-box">
+                    <h2 class="section-title">
+                        <span class="lang-ar">عملية استعارة الكتب</span>
+                        <span class="lang-en">Book Borrowing Process</span>
+                    </h2>
+                    <ul class="borrowing-list">
+                        <li class="borrowing-item">
+                            <span class="bullet"></span>
+                            <span class="lang-ar">يمكن للأعضاء استعارة كتابين كحد أقصى.</span>
+                            <span class="lang-en">Members can borrow a maximum of two books.</span>
+                        </li>
+                        <li class="borrowing-item">
+                            <span class="bullet"></span>
+                            <span class="lang-ar">انقر على رابط طلب الاستعارة عبر البريد الإلكتروني.</span>
+                            <span class="lang-en">Click the borrowing request link via email.</span>
+                        </li>
+                        <li class="borrowing-item">
+                            <span class="bullet"></span>
+                            <span class="lang-ar">بعد التحقق من العضوية، سيتم التواصل معكم عبر البريد الإلكتروني أو واتساب لترتيب مكان تسليم الكتاب.</span>
+                            <span class="lang-en">After verifying their membership, they will be contacted via email or WhatsApp to arrange a meeting place for book return.</span>
+                        </li>
+                    </ul>
+                    <div class="borrowing-cta">
+                        <a href="mailto:?subject=Library%20Borrowing%20Request&amp;body=Name%3A%20%0AMembership%20ID%3A%20%0ABook(s)%20requested%3A%20" class="borrowing-link">
+                            <span class="lang-ar">طلب الاستعارة عبر البريد الإلكتروني</span>
+                            <span class="lang-en">Send borrowing request via email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-light.png" alt="نادي اثر الثقافي - Athar Educational Club" class="logo-img logo-img-footer">
+                    <span class="footer-text lang-ar">نادي اثر الثقافي</span>
+                    <span class="footer-text lang-en">Athar Educational Club</span>
+                </div>
+                <p class="footer-copyright"><span class="lang-ar">© 2024 نادي اثر الثقافي. جميع الحقوق محفوظة.</span><span class="lang-en">© 2024 Athar Educational Club. All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

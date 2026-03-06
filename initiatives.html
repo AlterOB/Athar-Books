@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="site-lang-ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المبادرات - Athar Educational Club</title>
+    <script>
+    (function(){
+      try {
+        var lang = localStorage.getItem('athar-site-lang');
+        if (lang === 'en') {
+          document.documentElement.className = 'site-lang-en';
+          document.documentElement.setAttribute('dir', 'ltr');
+          document.documentElement.setAttribute('lang', 'en');
+        }
+      } catch (_) {}
+    })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo-light.png" alt="نادي اثر الثقافي - Athar Educational Club" class="logo-img logo-img-nav">
+                <div class="logo-text">
+                    <span class="lang-ar">نادي اثر الثقافي</span>
+                    <span class="lang-en">Athar Educational Club</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><span class="lang-ar">معلومات النادي</span><span class="lang-en">Club Info</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="initiatives.html" class="nav-link active"><span class="lang-ar">المبادرات</span><span class="lang-en">Initiatives</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="library.html" class="nav-link"><span class="lang-ar">المكتبة</span><span class="lang-en">Library</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="achievements.html" class="nav-link"><span class="lang-ar">الإنجازات</span><span class="lang-en">Achievements</span></a>
+                </li>
+            </ul>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn active" data-lang="ar" aria-label="العربية">عربي</button>
+                <span class="lang-divider">|</span>
+                <button type="button" class="lang-btn" data-lang="en" aria-label="English">English</button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="page-title">
+                    <span class="lang-ar">المبادرات</span>
+                    <span class="lang-en">Initiatives</span>
+                </h1>
+                <p class="page-subtitle"><span class="lang-ar">مبادراتنا الثقافية والتعليمية</span><span class="lang-en">Our cultural and educational initiatives</span></p>
+            </div>
+        </section>
+
+        <!-- Initiatives Content -->
+        <section class="initiatives-section">
+            <div class="container">
+                <div class="content-box">
+                    <h2 class="section-title"><span class="lang-ar">مبادراتنا الحالية</span><span class="lang-en">Our Current Initiatives</span></h2>
+                    <div class="initiatives-grid">
+                        <!-- 1. وردي قرآني زادي -->
+                        <div class="initiative-card">
+                            <h3><span class="lang-ar">وردي قرآني زادي</span><span class="lang-en">Wardi Qurani Zadi</span></h3>
+                            <p class="initiative-desc"><span class="lang-ar">فيديو أسبوعي</span><span class="lang-en">Weekly video</span></p>
+                            <a href="#" class="initiative-link" data-init="wardi-video"><span class="lang-ar">مشاهدة الفيديو</span><span class="lang-en">Watch video</span></a>
+                        </div>
+                        <!-- 2. أثر لتحفيظ القرآن الكريم -->
+                        <div class="initiative-card">
+                            <h3><span class="lang-ar">أثر لتحفيظ القرآن الكريم</span><span class="lang-en">Athar Quran Memorization</span></h3>
+                            <p class="initiative-desc"><span class="lang-ar">التسجيل في المبادرة</span><span class="lang-en">Register for the initiative</span></p>
+                            <a href="https://forms.gle/vbYQwhNzpUM6PMN57" target="_blank" rel="noopener noreferrer" class="initiative-link" data-init="quran-registration"><span class="lang-ar">رابط التسجيل</span><span class="lang-en">Registration link</span></a>
+                        </div>
+                        <!-- 3. مكتبة اثر -->
+                        <div class="initiative-card">
+                            <h3><span class="lang-ar">مكتبة اثر</span><span class="lang-en">Athar Library</span></h3>
+                            <p class="initiative-desc"><span class="lang-ar">التبرع واستعارة الكتب</span><span class="lang-en">Donate and borrow books</span></p>
+                            <div class="initiative-links">
+                                <a href="https://forms.gle/EQPxDfhssgLw4Ggy5" target="_blank" rel="noopener noreferrer" class="initiative-link" data-init="library-donate"><span class="lang-ar">رابط التبرع</span><span class="lang-en">Donation link</span></a>
+                                <a href="library.html" class="initiative-link" data-init="library-borrow"><span class="lang-ar">استعارة كتاب</span><span class="lang-en">Borrow a book</span></a>
+                            </div>
+                        </div>
+                        <!-- 4. نبذة الكتب -->
+                        <div class="initiative-card">
+                            <h3><span class="lang-ar">نبذة الكتب</span><span class="lang-en">Book Summary</span></h3>
+                            <p class="initiative-desc"><span class="lang-ar">انضم عبر واتساب</span><span class="lang-en">Join via WhatsApp</span></p>
+                            <a href="#" class="initiative-link" data-init="nabtha-whatsapp"><span class="lang-ar">رابط الواتساب</span><span class="lang-en">WhatsApp link</span></a>
+                        </div>
+                        <!-- 5. مبادرة شعرية -->
+                        <div class="initiative-card initiative-card-poetry">
+                            <h3><span class="lang-ar">المبادرة الشعرية</span><span class="lang-en">Poetry Initiative</span></h3>
+                            <p class="initiative-tagline">
+                                <span class="lang-ar">أطلق الشاعر داخلك! في كل صوت نغمة شعر وفي كل قلب بيت ينتظر أن يُقال 💫</span>
+                                <span class="lang-en">Unleash the poet within you! In every voice a melody, in every heart a verse waiting to be said 💫</span>
+                            </p>
+                            <p class="initiative-body">
+                                <span class="lang-ar">ضمن مبادرات أثر يُطلق نادي أثر مبادرة شعرية مفتوحة — نستقبل نصوصكم الشعرية أو مقاطع أدائكم للشعر لنُبرز معًا جمال الكلمة وصوت الإحساس 🌿 ولا يُشترط أن يكون النص من تأليفك، المهم أن يُعبّر أداؤك عنه ويصل به الإحساس. شاركنا شعورك، وكن أثرًا يُسمع 🤍</span>
+                                <span class="lang-en">As part of Athar’s initiatives, we’re launching an open poetry initiative. We welcome your poetic texts or performance clips so we can highlight together the beauty of the word and the voice of feeling 🌿 The piece doesn’t have to be your own — what matters is that your performance expresses it. Share your feeling with us and be a voice that is heard 🤍</span>
+                            </p>
+                            <a href="https://instagram.com/athar.culclub" target="_blank" rel="noopener noreferrer" class="initiative-link" data-init="poetry-instagram"><span class="lang-ar">تابعونا: athar.culclub</span><span class="lang-en">Follow us: athar.culclub</span></a>
+                        </div>
+                        <!-- 6. صوت غزة -->
+                        <div class="initiative-card initiative-card-gaza">
+                            <h3><span class="lang-ar">من قلب أثر إلى قلب غزة ✨</span><span class="lang-en">From Athar’s Heart to Gaza’s Heart ✨</span></h3>
+                            <p class="initiative-tagline">
+                                <span class="lang-ar">في زمن الحصار.. حين تتحوّل المجاعة إلى أداة حرب ويُترك الناس ليُمحَوا جوعًا وبصمت — لا يكون الحديث ترفًا، بل نجاة.</span>
+                                <span class="lang-en">In a time of siege, when hunger is turned into a weapon and people are left to be erased in silence — to speak is not a luxury, it is survival.</span>
+                            </p>
+                            <p class="initiative-body">
+                                <span class="lang-ar">يدعوكم نادي أثر للمشاركة بمقطع فيديو قصير يُجسد موقفًا ويدوّن أثرًا ويرفض الصمت ويختار الانحياز. في غزة الوجع لا يُرى إلا حين يُوثق، والصمت لا يُكسر إلا بالصورة والصوت. شاركونا فيديو أو صورة تحكي واقع أهلنا في غزة.</span>
+                                <span class="lang-en">Athar Club invites you to share a short video that captures a stance, records an impact, refuses silence, and takes a side. In Gaza, pain is not seen until it is documented — silence is not broken except by image and sound. Share with us a video or image that tells the reality of our people in Gaza.</span>
+                            </p>
+                            <p class="initiative-submit-label"><span class="lang-ar">🎥 ترسل المشاركات عبر:</span><span class="lang-en">🎥 Send your submissions via:</span></p>
+                            <div class="initiative-links initiative-links-gaza">
+                                <a href="https://wa.me/905338478447" target="_blank" rel="noopener noreferrer" class="initiative-link" data-init="gaza-whatsapp" title="WhatsApp"><span class="lang-ar">واتساب +905338478447</span><span class="lang-en">WhatsApp +905338478447</span></a>
+                                <a href="https://www.instagram.com/athar.edclub?igsh=MXAwdnN0c3hod3Qy" target="_blank" rel="noopener noreferrer" class="initiative-link" data-init="gaza-instagram" title="Instagram"><span class="lang-ar">إنستغرام athar.edclub</span><span class="lang-en">Instagram athar.edclub</span></a>
+                                <a href="mailto:nadyathralthqafy@gmail.com?subject=مشاركة%20صوت%20غزة%20-%20Voice%20of%20Gaza%20Submission" class="initiative-link" data-init="gaza-email" title="Email"><span class="lang-ar">البريد nadyathralthqafy@gmail.com</span><span class="lang-en">Email nadyathralthqafy@gmail.com</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-light.png" alt="نادي اثر الثقافي - Athar Educational Club" class="logo-img logo-img-footer">
+                    <span class="footer-text lang-ar">نادي اثر الثقافي</span>
+                    <span class="footer-text lang-en">Athar Educational Club</span>
+                </div>
+                <p class="footer-copyright"><span class="lang-ar">© 2024 نادي اثر الثقافي. جميع الحقوق محفوظة.</span><span class="lang-en">© 2024 Athar Educational Club. All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
