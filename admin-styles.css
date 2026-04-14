@@ -1,0 +1,323 @@
+/* ===== Admin Page Styles ===== */
+
+.admin-section {
+    padding: 2rem 0;
+    background: linear-gradient(135deg, var(--albescent-white), #f0f0e6);
+}
+
+.admin-section:nth-child(odd) {
+    background: #fff;
+}
+
+/* Section header row (title + add button) */
+.admin-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.admin-section-header .section-title {
+    margin-bottom: 0;
+}
+
+/* Add Book button */
+.admin-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--persian-plum), var(--persian-plum-light));
+    color: var(--albescent-white);
+    border: none;
+    padding: 0.65rem 1.4rem;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(109, 23, 28, 0.25);
+    white-space: nowrap;
+}
+
+.admin-add-btn:hover {
+    opacity: 0.88;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(109, 23, 28, 0.35);
+}
+
+.admin-add-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    font-weight: 300;
+}
+
+/* Table wrapper */
+.admin-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.95rem;
+    min-width: 680px;
+}
+
+.admin-table thead th {
+    background: linear-gradient(135deg, var(--persian-plum), var(--persian-plum-light));
+    color: var(--albescent-white);
+    padding: 0.85rem 1rem;
+    font-weight: 700;
+    text-align: start;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.admin-table thead th:first-child { border-radius: 8px 0 0 0; }
+.admin-table thead th:last-child  { border-radius: 0 8px 0 0; }
+
+.site-lang-en .admin-table thead th:first-child { border-radius: 8px 0 0 0; }
+.site-lang-en .admin-table thead th:last-child  { border-radius: 0 8px 0 0; }
+
+.admin-table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(109, 23, 28, 0.1);
+    color: var(--charcoal-black);
+    vertical-align: middle;
+}
+
+.admin-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+    background: rgba(109, 23, 28, 0.04);
+}
+
+.admin-table tbody tr:last-child td { border-bottom: none; }
+
+/* Book number badge */
+.book-num-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--persian-plum), var(--persian-plum-light));
+    color: var(--albescent-white);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    min-width: 2rem;
+    text-align: center;
+}
+
+.book-title-cell {
+    max-width: 320px;
+    word-break: break-word;
+    line-height: 1.45;
+}
+
+/* Action buttons */
+.action-btns {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.action-btn {
+    background: none;
+    border: 1.5px solid transparent;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    padding: 0.3rem 0.55rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.edit-btn {
+    border-color: rgba(52, 152, 219, 0.4);
+    background: rgba(52, 152, 219, 0.07);
+}
+
+.edit-btn:hover {
+    background: rgba(52, 152, 219, 0.18);
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    border-color: rgba(192, 57, 43, 0.35);
+    background: rgba(192, 57, 43, 0.06);
+}
+
+.delete-btn:hover {
+    background: rgba(192, 57, 43, 0.18);
+    transform: translateY(-1px);
+}
+
+/* Status badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-badge.pending  { background: rgba(243,156,18,0.15); color: #e67e22; }
+.status-badge.approved { background: rgba(39,174,96,0.15);  color: #27ae60; }
+.status-badge.rejected { background: rgba(192,57,43,0.15);  color: #c0392b; }
+.status-badge.returned { background: rgba(52,73,94,0.15);   color: #34495e; }
+
+/* Hidden book row */
+.admin-table tbody tr.book-hidden { opacity: 0.48; }
+
+/* Empty state */
+.admin-empty {
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 1.1rem;
+    color: var(--persian-plum);
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+/* Wide modal variant (add/edit book) */
+.modal-box--wide {
+    max-width: 560px;
+}
+
+/* Narrow modal variant (confirm delete) */
+.modal-box--narrow {
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Two-column row in modal form */
+.modal-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Radio group inside modal */
+.modal-radio-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+}
+
+.modal-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--charcoal-black);
+}
+
+.modal-radio-label input[type="radio"] {
+    accent-color: var(--persian-plum);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Confirm actions row */
+.modal-confirm-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--charcoal-black);
+    margin-bottom: 0.75rem;
+}
+
+.modal-confirm-book-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--persian-plum);
+    margin-bottom: 1.5rem;
+    background: rgba(109, 23, 28, 0.07);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+.modal-confirm-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Danger variant of submit */
+.modal-submit--danger {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    box-shadow: 0 4px 14px rgba(192, 57, 43, 0.3);
+}
+
+.modal-submit--danger:hover {
+    box-shadow: 0 6px 20px rgba(192, 57, 43, 0.45);
+}
+
+/* Cancel button */
+.modal-cancel-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--persian-plum);
+    color: var(--persian-plum);
+    background: transparent;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.modal-cancel-btn:hover {
+    background: rgba(109, 23, 28, 0.08);
+    transform: translateY(-1px);
+}
+
+/* Toast notification */
+.admin-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--charcoal-black);
+    color: var(--albescent-white);
+    padding: 0.85rem 1.75rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    z-index: 3000;
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.admin-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-table { font-size: 0.85rem; }
+    .admin-table thead th,
+    .admin-table tbody td { padding: 0.6rem 0.75rem; }
+    .modal-row { grid-template-columns: 1fr; }
+    .admin-section-header { flex-direction: column; align-items: flex-start; }
+}

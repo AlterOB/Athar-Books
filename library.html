@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="site-lang-ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المكتبة - Athar Educational Club</title>
     <script>
-    (function(){
-      try {
-        var lang = localStorage.getItem('athar-site-lang');
-        if (lang === 'en') {
-          document.documentElement.className = 'site-lang-en';
-          document.documentElement.setAttribute('dir', 'ltr');
-          document.documentElement.setAttribute('lang', 'en');
-        }
-      } catch (_) {}
-    })();
+        (function () {
+            try {
+                var lang = localStorage.getItem('athar-site-lang');
+                if (lang === 'en') {
+                    document.documentElement.className = 'site-lang-en';
+                    document.documentElement.setAttribute('dir', 'ltr');
+                    document.documentElement.setAttribute('lang', 'en');
+                }
+            } catch (_) { }
+        })();
     </script>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="backend-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="images/logo-light.png" alt="نادي اثر الثقافي - Athar Educational Club" class="logo-img logo-img-nav">
+                <img src="images/logo-light.png" alt="نادي اثر الثقافي - Athar Educational Club"
+                    class="logo-img logo-img-nav">
                 <div class="logo-text">
                     <span class="lang-ar">نادي اثر الثقافي</span>
                     <span class="lang-en">Athar Educational Club</span>
@@ -32,16 +37,20 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link"><span class="lang-ar">معلومات النادي</span><span class="lang-en">Club Info</span></a>
+                    <a href="index.html" class="nav-link"><span class="lang-ar">معلومات النادي</span><span
+                            class="lang-en">Club Info</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="initiatives.html" class="nav-link"><span class="lang-ar">المبادرات</span><span class="lang-en">Initiatives</span></a>
+                    <a href="initiatives.html" class="nav-link"><span class="lang-ar">المبادرات</span><span
+                            class="lang-en">Initiatives</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="library.html" class="nav-link active"><span class="lang-ar">المكتبة</span><span class="lang-en">Library</span></a>
+                    <a href="library.html" class="nav-link active"><span class="lang-ar">المكتبة</span><span
+                            class="lang-en">Library</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="achievements.html" class="nav-link"><span class="lang-ar">الإنجازات</span><span class="lang-en">Achievements</span></a>
+                    <a href="achievements.html" class="nav-link"><span class="lang-ar">الإنجازات</span><span
+                            class="lang-en">Achievements</span></a>
                 </li>
             </ul>
             <div class="lang-switcher">
@@ -66,7 +75,8 @@
                     <span class="lang-ar">المكتبة</span>
                     <span class="lang-en">Library</span>
                 </h1>
-                <p class="page-subtitle"><span class="lang-ar">مكتبتنا الرقمية والموارد التعليمية</span><span class="lang-en">Our digital library and educational resources</span></p>
+                <p class="page-subtitle"><span class="lang-ar">مكتبتنا الرقمية والموارد التعليمية</span><span
+                        class="lang-en">Our digital library and educational resources</span></p>
             </div>
         </section>
 
@@ -79,16 +89,17 @@
                         <span class="lang-en">Window Interface</span>
                     </h2>
                     <p class="library-interface-text">
-                        <span class="lang-ar">يُعرض الكتاب مع صورة غلافه في النافذة. يمكن للأعضاء اختيار الكتاب المطلوب عن طريق التمرير للأسفل.</span>
-                        <span class="lang-en">The book, along with its cover image, is displayed on the window. Users can select their desired book by scrolling down.</span>
+                        <span class="lang-ar">يُعرض الكتاب مع صورة غلافه في النافذة. يمكن للأعضاء اختيار الكتاب المطلوب
+                            عن طريق التمرير للأسفل.</span>
+                        <span class="lang-en">The book, along with its cover image, is displayed on the window. Users
+                            can select their desired book by scrolling down.</span>
                     </p>
                     <div class="library-window-preview" aria-hidden="true">
-                        <div class="book-covers-scroll">
-                            <div class="book-cover-placeholder"><span class="lang-ar">كتاب</span><span class="lang-en">Book</span></div>
-                            <div class="book-cover-placeholder"><span class="lang-ar">كتاب</span><span class="lang-en">Book</span></div>
-                            <div class="book-cover-placeholder"><span class="lang-ar">كتاب</span><span class="lang-en">Book</span></div>
-                            <div class="book-cover-placeholder"><span class="lang-ar">كتاب</span><span class="lang-en">Book</span></div>
-                            <div class="book-cover-placeholder"><span class="lang-ar">كتاب</span><span class="lang-en">Book</span></div>
+                        <div class="book-covers-scroll" id="dynamic-books-container">
+                            <div class="loading-books">
+                                <span class="lang-ar">جاري تحميل الكتب...</span>
+                                <span class="lang-en">Loading books...</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -116,35 +127,83 @@
                         </li>
                         <li class="borrowing-item">
                             <span class="bullet"></span>
-                            <span class="lang-ar">بعد التحقق من العضوية، سيتم التواصل معكم عبر البريد الإلكتروني أو واتساب لترتيب مكان تسليم الكتاب.</span>
-                            <span class="lang-en">After verifying their membership, they will be contacted via email or WhatsApp to arrange a meeting place for book return.</span>
+                            <span class="lang-ar">بعد التحقق من العضوية، سيتم التواصل معكم عبر البريد الإلكتروني أو
+                                واتساب لترتيب مكان تسليم الكتاب.</span>
+                            <span class="lang-en">After verifying their membership, they will be contacted via email or
+                                WhatsApp to arrange a meeting place for book return.</span>
                         </li>
                     </ul>
                     <div class="borrowing-cta">
-                        <a href="mailto:?subject=Library%20Borrowing%20Request&amp;body=Name%3A%20%0AMembership%20ID%3A%20%0ABook(s)%20requested%3A%20" class="borrowing-link">
+                        <button type="button" id="open-borrow-modal" class="borrowing-link">
                             <span class="lang-ar">طلب الاستعارة عبر البريد الإلكتروني</span>
                             <span class="lang-en">Send borrowing request via email</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Borrow Modal -->
+    <div class="modal-overlay" id="borrow-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-box">
+            <button type="button" class="modal-close" id="close-borrow-modal" aria-label="Close">&times;</button>
+            <h2 class="modal-title">
+                <span class="lang-ar">طلب استعارة كتاب</span>
+                <span class="lang-en">Book Borrowing Request</span>
+            </h2>
+            <form id="borrow-form" class="modal-form" novalidate>
+                <div class="modal-field">
+                    <label for="borrow-book-id">
+                        <span class="lang-ar">رقم الكتاب</span>
+                        <span class="lang-en">Book ID</span>
+                    </label>
+                    <input type="number" id="borrow-book-id" name="book_id" min="1" max="999" required placeholder=" "
+                        autocomplete="off">
+                    <span class="modal-field-hint">
+                        <span class="lang-ar">أدخل رقم الكتاب كما يظهر في القائمة</span>
+                        <span class="lang-en">Enter the book number as shown in the list</span>
+                    </span>
+                </div>
+                <div class="modal-field">
+                    <label for="borrow-member-number">
+                        <span class="lang-ar">رقم العضوية</span>
+                        <span class="lang-en">Member Number</span>
+                    </label>
+                    <input type="text" id="borrow-member-number" name="member_number" maxlength="4" pattern="\d{4}"
+                        required placeholder=" " autocomplete="off" inputmode="numeric">
+                    <span class="modal-field-hint">
+                        <span class="lang-ar">أدخل رقم العضوية المكون من 4 أرقام</span>
+                        <span class="lang-en">Enter your 4-digit member number</span>
+                    </span>
+                </div>
+                <div class="modal-error" id="borrow-modal-error" aria-live="polite"></div>
+                <button type="submit" class="modal-submit">
+                    <span class="lang-ar">إرسال الطلب</span>
+                    <span class="lang-en">Submit Request</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="images/logo-light.png" alt="نادي اثر الثقافي - Athar Educational Club" class="logo-img logo-img-footer">
+                    <img src="images/logo-light.png" alt="نادي اثر الثقافي - Athar Educational Club"
+                        class="logo-img logo-img-footer">
                     <span class="footer-text lang-ar">نادي اثر الثقافي</span>
                     <span class="footer-text lang-en">Athar Educational Club</span>
                 </div>
-                <p class="footer-copyright"><span class="lang-ar">© 2024 نادي اثر الثقافي. جميع الحقوق محفوظة.</span><span class="lang-en">© 2024 Athar Educational Club. All rights reserved.</span></p>
+                <p class="footer-copyright"><span class="lang-ar">© 2024 نادي اثر الثقافي. جميع الحقوق
+                        محفوظة.</span><span class="lang-en">© 2024 Athar Educational Club. All rights reserved.</span>
+                </p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -43,6 +43,9 @@
                 <li class="nav-item">
                     <a href="achievements.html" class="nav-link"><span class="lang-ar">الإنجازات</span><span class="lang-en">Achievements</span></a>
                 </li>
+                <li class="nav-item">
+                    <button type="button" id="open-admin-modal" class="nav-link nav-admin-btn"><span class="lang-ar">الإدارة</span><span class="lang-en">Admin</span></button>
+                </li>
             </ul>
             <div class="lang-switcher">
                 <button type="button" class="lang-btn active" data-lang="ar" aria-label="العربية">عربي</button>
@@ -169,6 +172,35 @@
             </div>
         </div>
     </footer>
+
+    <!-- Admin Login Modal -->
+    <div class="modal-overlay" id="admin-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-box">
+            <button type="button" class="modal-close" id="close-admin-modal" aria-label="Close">&times;</button>
+            <h2 class="modal-title">
+                <span class="lang-ar">دخول المدير</span>
+                <span class="lang-en">Admin Login</span>
+            </h2>
+            <form id="admin-login-form" class="modal-form" novalidate>
+                <div class="modal-field">
+                    <label for="admin-id-input">
+                        <span class="lang-ar">معرّف المدير</span>
+                        <span class="lang-en">Admin ID</span>
+                    </label>
+                    <input type="password" id="admin-id-input" name="admin_id" required placeholder=" " autocomplete="off">
+                    <span class="modal-field-hint">
+                        <span class="lang-ar">أدخل معرّف المدير الخاص بك</span>
+                        <span class="lang-en">Enter your admin ID</span>
+                    </span>
+                </div>
+                <div class="modal-error" id="admin-modal-error" aria-live="polite"></div>
+                <button type="submit" class="modal-submit">
+                    <span class="lang-ar">دخول</span>
+                    <span class="lang-en">Login</span>
+                </button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

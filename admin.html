@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="site-lang-ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الإدارة - Athar Educational Club</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script>
+        (function () {
+            try {
+                var lang = localStorage.getItem('athar-site-lang');
+                if (lang === 'en') {
+                    document.documentElement.className = 'site-lang-en';
+                    document.documentElement.setAttribute('dir', 'ltr');
+                    document.documentElement.setAttribute('lang', 'en');
+                }
+            } catch (_) { }
+        })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="backend-styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo-light.png" alt="نادي اثر الثقافي - Athar Educational Club"
+                    class="logo-img logo-img-nav">
+                <div class="logo-text">
+                    <span class="lang-ar">نادي اثر الثقافي</span>
+                    <span class="lang-en">Athar Educational Club</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><span class="lang-ar">معلومات النادي</span><span class="lang-en">Club Info</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="initiatives.html" class="nav-link"><span class="lang-ar">المبادرات</span><span class="lang-en">Initiatives</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="library.html" class="nav-link"><span class="lang-ar">المكتبة</span><span class="lang-en">Library</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="achievements.html" class="nav-link"><span class="lang-ar">الإنجازات</span><span class="lang-en">Achievements</span></a>
+                </li>
+            </ul>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn active" data-lang="ar" aria-label="العربية">عربي</button>
+                <span class="lang-divider">|</span>
+                <button type="button" class="lang-btn" data-lang="en" aria-label="English">English</button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Page Header -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="page-title">
+                    <span class="lang-ar">لوحة الإدارة</span>
+                    <span class="lang-en">Admin Panel</span>
+                </h1>
+                <p class="page-subtitle">
+                    <span class="lang-ar">إدارة الكتب وطلبات الاستعارة</span>
+                    <span class="lang-en">Manage books and borrowing requests</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- ── Books CRUD Section ── -->
+        <section class="admin-section">
+            <div class="container">
+                <div class="content-box">
+                    <div class="admin-section-header">
+                        <h2 class="section-title">
+                            <span class="lang-ar">إدارة الكتب</span>
+                            <span class="lang-en">Books Management</span>
+                        </h2>
+                        <button type="button" id="open-add-book-modal" class="admin-add-btn">
+                            <span class="admin-add-icon">+</span>
+                            <span class="lang-ar">إضافة كتاب</span>
+                            <span class="lang-en">Add Book</span>
+                        </button>
+                    </div>
+                    <div class="admin-table-wrapper" id="books-table-wrapper">
+                        <div class="loading-books">
+                            <span class="lang-ar">جاري تحميل الكتب...</span>
+                            <span class="lang-en">Loading books...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Borrow Requests Section ── -->
+        <section class="admin-section">
+            <div class="container">
+                <div class="content-box">
+                    <h2 class="section-title">
+                        <span class="lang-ar">طلبات الاستعارة</span>
+                        <span class="lang-en">Borrowing Requests</span>
+                    </h2>
+                    <div class="admin-table-wrapper" id="requests-table-wrapper">
+                        <div class="loading-books">
+                            <span class="lang-ar">جاري تحميل الطلبات...</span>
+                            <span class="lang-en">Loading requests...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Achievements CRUD Section ── -->
+        <section class="admin-section">
+            <div class="container">
+                <div class="content-box">
+                    <div class="admin-section-header">
+                        <h2 class="section-title">
+                            <span class="lang-ar">إدارة الإنجازات</span>
+                            <span class="lang-en">Achievements Management</span>
+                        </h2>
+                        <button type="button" id="open-add-achievement-modal" class="admin-add-btn">
+                            <span class="admin-add-icon">+</span>
+                            <span class="lang-ar">إضافة إنجاز</span>
+                            <span class="lang-en">Add Achievement</span>
+                        </button>
+                    </div>
+                    <div class="admin-table-wrapper" id="achievements-table-wrapper">
+                        <div class="loading-books">
+                            <span class="lang-ar">جاري تحميل الإنجازات...</span>
+                            <span class="lang-en">Loading achievements...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── Add / Edit Book Modal ── -->
+    <div class="modal-overlay" id="book-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-box modal-box--wide">
+            <button type="button" class="modal-close" id="close-book-modal" aria-label="Close">&times;</button>
+            <h2 class="modal-title" id="book-modal-title">
+                <span class="lang-ar">إضافة كتاب</span>
+                <span class="lang-en">Add Book</span>
+            </h2>
+            <form id="book-form" class="modal-form" novalidate>
+                <input type="hidden" id="book-edit-id" value="">
+
+                <div class="modal-row">
+                    <div class="modal-field">
+                        <label for="book-number-input">
+                            <span class="lang-ar">رقم الكتاب</span>
+                            <span class="lang-en">Book Number</span>
+                        </label>
+                        <input type="number" id="book-number-input" name="book_number" min="1" max="9999" required placeholder=" " autocomplete="off">
+                    </div>
+                    <div class="modal-field">
+                        <label for="book-copies-input">
+                            <span class="lang-ar">عدد النسخ</span>
+                            <span class="lang-en">Copies</span>
+                        </label>
+                        <input type="number" id="book-copies-input" name="copies" min="1" max="99" value="1" required placeholder=" " autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="modal-field">
+                    <label for="book-title-input">
+                        <span class="lang-ar">عنوان الكتاب</span>
+                        <span class="lang-en">Book Title</span>
+                    </label>
+                    <input type="text" id="book-title-input" name="title" required placeholder=" " autocomplete="off">
+                </div>
+
+                <div class="modal-field">
+                    <label>
+                        <span class="lang-ar">الحالة</span>
+                        <span class="lang-en">Status</span>
+                    </label>
+                    <div class="modal-radio-group">
+                        <label class="modal-radio-label">
+                            <input type="radio" name="is_available" value="1" checked>
+                            <span class="lang-ar">متاح</span>
+                            <span class="lang-en">Available</span>
+                        </label>
+                        <label class="modal-radio-label">
+                            <input type="radio" name="is_available" value="0">
+                            <span class="lang-ar">غير متاح</span>
+                            <span class="lang-en">Unavailable</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-error" id="book-modal-error" aria-live="polite"></div>
+
+                <button type="submit" class="modal-submit" id="book-submit-btn">
+                    <span class="lang-ar">حفظ</span>
+                    <span class="lang-en">Save</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── Delete Confirm Modal ── -->
+    <div class="modal-overlay" id="delete-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-box modal-box--narrow">
+            <button type="button" class="modal-close" id="close-delete-modal" aria-label="Close">&times;</button>
+            <h2 class="modal-title">
+                <span class="lang-ar">تأكيد الحذف</span>
+                <span class="lang-en">Confirm Deletion</span>
+            </h2>
+            <p class="modal-confirm-text">
+                <span class="lang-ar">هل أنت متأكد أنك تريد حذف هذا العنصر؟ لا يمكن التراجع عن هذه العملية.</span>
+                <span class="lang-en">Are you sure you want to delete this item? This action cannot be undone.</span>
+            </p>
+            <p class="modal-confirm-book-name" id="delete-item-name"></p>
+            <div class="modal-confirm-actions">
+                <button type="button" id="confirm-delete-btn" class="modal-submit modal-submit--danger">
+                    <span class="lang-ar">حذف</span>
+                    <span class="lang-en">Delete</span>
+                </button>
+                <button type="button" id="cancel-delete-btn" class="modal-cancel-btn">
+                    <span class="lang-ar">إلغاء</span>
+                    <span class="lang-en">Cancel</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Add / Edit Achievement Modal ── -->
+    <div class="modal-overlay" id="achievement-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-box modal-box--wide">
+            <button type="button" class="modal-close" id="close-achievement-modal" aria-label="Close">&times;</button>
+            <h2 class="modal-title" id="achievement-modal-title">
+                <span class="lang-ar">إضافة إنجاز</span>
+                <span class="lang-en">Add Achievement</span>
+            </h2>
+            <form id="achievement-form" class="modal-form" novalidate>
+                <input type="hidden" id="achievement-edit-id" value="">
+
+                <div class="modal-field">
+                    <label for="achievement-title-ar-input">
+                        <span class="lang-ar">العنوان (بالعربية)</span>
+                        <span class="lang-en">Title (Arabic)</span>
+                    </label>
+                    <input type="text" id="achievement-title-ar-input" required placeholder=" " autocomplete="off" dir="rtl">
+                </div>
+
+                <div class="modal-field">
+                    <label for="achievement-title-en-input">
+                        <span class="lang-ar">العنوان (بالإنجليزية)</span>
+                        <span class="lang-en">Title (English)</span>
+                    </label>
+                    <input type="text" id="achievement-title-en-input" required placeholder=" " autocomplete="off" dir="ltr">
+                </div>
+
+                <div class="modal-error" id="achievement-modal-error" aria-live="polite"></div>
+
+                <button type="submit" class="modal-submit" id="achievement-submit-btn">
+                    <span class="lang-ar">حفظ</span>
+                    <span class="lang-en">Save</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-light.png" alt="نادي اثر الثقافي - Athar Educational Club"
+                        class="logo-img logo-img-footer">
+                    <span class="footer-text lang-ar">نادي اثر الثقافي</span>
+                    <span class="footer-text lang-en">Athar Educational Club</span>
+                </div>
+                <p class="footer-copyright"><span class="lang-ar">© 2024 نادي اثر الثقافي. جميع الحقوق محفوظة.</span><span class="lang-en">© 2024 Athar Educational Club. All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

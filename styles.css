@@ -68,7 +68,7 @@ body.site-lang-en {
 .navbar {
     background: linear-gradient(135deg, var(--persian-plum), var(--persian-plum-light));
     padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -108,7 +108,7 @@ body.site-lang-en {
 .logo-img-hero {
     width: 120px;
     height: 120px;
-    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
 }
 
 .logo-img-footer {
@@ -262,6 +262,15 @@ body.site-lang-en {
     transform: translateY(-2px);
 }
 
+/* Admin button in nav — same look as nav-link but is a <button> */
+.nav-admin-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -298,13 +307,11 @@ body.site-lang-en {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 50px,
-        rgba(255,255,255,0.03) 50px,
-        rgba(255,255,255,0.03) 100px
-    );
+    background-image: repeating-linear-gradient(45deg,
+            transparent,
+            transparent 50px,
+            rgba(255, 255, 255, 0.03) 50px,
+            rgba(255, 255, 255, 0.03) 100px);
 }
 
 .hero-content {
@@ -337,7 +344,7 @@ body.site-lang-en {
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
 }
 
 .logo-symbol-large::before {
@@ -435,7 +442,7 @@ body.site-lang-en {
     padding: 3rem;
     margin: 3rem 0;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 2px solid var(--persian-plum);
     position: relative;
     overflow: hidden;
@@ -744,7 +751,7 @@ body.site-lang-en {
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border: 2px solid var(--persian-plum);
     transition: all 0.3s ease;
     text-align: center;
@@ -754,7 +761,7 @@ body.site-lang-en {
 .library-card:hover,
 .achievement-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .initiative-card h3,
@@ -892,7 +899,7 @@ body.site-lang-en {
     color: var(--albescent-white);
     font-size: 0.95rem;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Library: Book Borrowing Process */
@@ -958,6 +965,187 @@ body.site-lang-en {
 .site-lang-en .borrowing-item .bullet {
     margin-left: 0;
     margin-right: 1rem;
+}
+
+/* ===== Borrow Modal ===== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(35, 31, 32, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-box {
+    position: relative;
+    background: var(--albescent-white);
+    border: 2px solid var(--persian-plum);
+    border-radius: 18px;
+    padding: 2.5rem 2.5rem 2rem;
+    width: 90%;
+    max-width: 440px;
+    box-shadow: 0 20px 60px rgba(109, 23, 28, 0.3), 0 0 0 1px rgba(109, 23, 28, 0.08);
+    animation: modalSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.modal-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--persian-plum), var(--persian-plum-light), var(--persian-plum));
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--persian-plum);
+    cursor: pointer;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.site-lang-en .modal-close {
+    right: auto;
+    left: 1rem;
+}
+
+.modal-close:hover {
+    background: rgba(109, 23, 28, 0.1);
+    transform: scale(1.1);
+}
+
+.modal-title {
+    color: var(--persian-plum);
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1.75rem;
+    padding-bottom: 0.75rem;
+    position: relative;
+}
+
+.modal-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--persian-plum), var(--persian-plum-light));
+    border-radius: 2px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.modal-field label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--charcoal-black);
+}
+
+.modal-field input {
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba(109, 23, 28, 0.25);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--charcoal-black);
+    background: #fff;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.modal-field input:focus {
+    border-color: var(--persian-plum);
+    box-shadow: 0 0 0 3px rgba(109, 23, 28, 0.12);
+}
+
+.modal-field input:invalid:not(:placeholder-shown) {
+    border-color: #c0392b;
+}
+
+.modal-field-hint {
+    font-size: 0.8rem;
+    color: var(--charcoal-black);
+    opacity: 0.55;
+}
+
+.modal-error {
+    font-size: 0.9rem;
+    color: #c0392b;
+    text-align: center;
+    min-height: 1.25rem;
+    font-weight: 600;
+}
+
+.modal-submit {
+    padding: 0.85rem 2rem;
+    background: linear-gradient(135deg, var(--persian-plum), var(--persian-plum-light));
+    color: var(--albescent-white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(109, 23, 28, 0.3);
+    transition: all 0.3s ease;
+}
+
+.modal-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(109, 23, 28, 0.4);
+}
+
+.modal-submit:active {
+    transform: translateY(-1px);
 }
 
 /* Responsive Design */
@@ -1038,6 +1226,7 @@ body.site-lang-en {
 }
 
 @media (max-width: 480px) {
+
     .club-title .lang-ar,
     .page-title .lang-ar {
         font-size: 1.5rem;
